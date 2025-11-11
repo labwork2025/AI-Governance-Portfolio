@@ -1,36 +1,33 @@
-# AI Governance Risk Report: "T-Pot" AI Server
+# AI Governance Risk Report: T-Pot Server
 
 * **Date:** 10/31/2025
 * **Analyst:** Elijah Banks
-* **Asset:** "AI Server" (T-Pot Honeypot)
-* **IP Address:** `192.168.52.150`
+* **Asset:** "AI Server" (T-Pot Honeypot, IP: `192.168.52.150`)
 
 ---
 
 ### 1. Executive Summary
 
-A risk assessment was performed on the target AI Server to identify its network attack surface and validate active threats. The assessment discovered **multiple critical- and high-risk vulnerabilities**, including open, unencrypted services and a confirmed vulnerability to brute-force credential attacks.
-
-Immediate remediation is required to mitigate the high probability of unauthorized access and a potential breach of data integrity.
+I ran a risk assessment on the AI Server and found **multiple critical- and high-risk vulnerabilities.** The server is exposed with unencrypted services and is confirmed to be vulnerable to a simple brute-force attack. These issues need to be fixed immediately to prevent unauthorized access.
 
 ---
 
-### 2. Findings & Evidence
+### 2. My Findings (The 3-Step Process)
 
-The assessment was conducted in three phases: Reconnaissance, Simulated Attack, and Log Analysis.
+I confirmed the risk in three phases: Recon, Attack, and Log Analysis.
 
-#### Evidence Packet A: Reconnaissance (Nmap Scan)
-A network scan was run from an internal attacker-profile VM (`192.168.52.138`) to map the target's open ports. The scan revealed a dangerously large attack surface, violating the Principle of Least Privilege.
+#### Phase 1: Reconnaissance (Nmap Scan)
+I scanned the server from an attacker's perspective (`192.168.52.138`). The scan showed a massive attack surface with several high-risk ports open.
 
-**Key High-Risk Services Identified:**
-* `23/tcp` (Telnet): **CRITICAL.** An unencrypted protocol that transmits credentials in plain text.
-* `21/tcp` (FTP): **HIGH.** An unencrypted protocol for file transfer.
-* `445/tcp` (microsoft-ds): **HIGH.** The SMB protocol, a common vector for ransomware (e.g., WannaCry).
-* `22/tcp` (SSH): **OPEN.** The vector for our simulated attack.
+**Key Services Identified:**
+* `23/tcp` (Telnet): **CRITICAL.** Sends passwords in clear text.
+* `21/tcp` (FTP): **HIGH.** Unencrypted file transfer.
+* `445/tcp` (SMB): **HIGH.** A primary target for ransomware.
+* `22/tcp` (SSH): **OPEN.** This was the port I decided to attack.
 
-#### Evidence Packet B: Simulated Attack (Hydra)
-We simulated a standard brute-force attack against the open SSH port (22) using Hydra. This mimics the most common attack pattern from low-sophistication threat actors.
+#### Phase 2: Simulated Attack (Hydra)
+I ran a standard Hydra brute-force attack against the open SSH port (22) using a common password list.
 
-**Attacker Command:**
+**Command:**
 ```bash
 hydra -l root -P /usr/share/wordlists/fasttrack.txt ssh://192.168.52.150
