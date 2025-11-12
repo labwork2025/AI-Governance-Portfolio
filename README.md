@@ -1,7 +1,3 @@
-<img width="1920" height="1080" alt="Screenshot (869)" src="https://github.com/user-attachments/assets/8b1bfbe5-3adb-4083-b3f7-b1de502e2fab" />
-<img width="1920" height="1080" alt="Screenshot (868)" src="https://github.com/user-attachments/assets/5f2d36cb-f90e-402b-b029-d7575885abbf" />
-<img width="1920" height="1080" alt="Screenshot (867)" src="https://github.com/user-attachments/assets/b8c12e51-a082-4e69-8f26-624e58315728" />
-<img width="1920" height="1080" alt="Screenshot (866)" src="https://github.com/user-attachments/assets/71b0dc4d-955c-46e5-a30e-23f075f7bfd9" />
 # AI Governance Risk Report: T-Pot Server
 
 * **Date:** 11/10/2025
