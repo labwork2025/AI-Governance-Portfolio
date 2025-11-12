@@ -73,9 +73,7 @@ Based on these findings, I recommend the following controls, prioritized by seve
 #### Standard (High-Priority Hardening):
 1.  **Disable Root Login:** Configure the SSH service to prohibit direct login for the `root` user.
 2.  **Implement Key-Based Authentication:** Disable password-based logins for SSH a
-#### Immediate (Critical):
-1.  **Disable & Firewall:** The Telnet (`23/tcp`) and FTP (`21/tcp`) services must be disabled and firewalled immediately.
-2.  **Investigate & Block:** The SMB (`445/tcp`) port should be blocked unless there is a documented and approved business justification.
+
 
 #### Standard (High-Priority Hardening):
 1.  **Disable Root Login:** Configure the SSH service to prohibit direct login for the `root` user.
