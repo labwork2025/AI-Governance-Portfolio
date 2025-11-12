@@ -1,6 +1,6 @@
 # AI Governance Risk Report: T-Pot Server
 
-* **Date:** 11/10/2025
+* **Date:** 11/11/2025
 * **Analyst:** Elijah Banks
 * **Asset:** "AI Server" (T-Pot Honeypot)
 * **IP Address:** `192.168.52.149`
